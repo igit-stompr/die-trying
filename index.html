@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DT // Die Trying Crew</title>
+    <style>
+        :root {
+            --bg-color: #0b0d0c;
+            --panel-bg: #111413;
+            --text-color: #e2e8f0;
+            --accent-color: #3ade78; 
+            --accent-hover: #22c55e;
+            --border-color: #1f2421;
+            --card-bg: #161a18;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 550px;
+            width: 100%;
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .clan-tag {
+            display: inline-block;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: 2px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .section p {
+            color: #cbd5e1;
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+        }
+
+        .manifesto-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .manifesto-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 16px;
+            color: #cbd5e1;
+            font-size: 1.05rem;
+        }
+
+        .manifesto-list li::before {
+            content: "▪";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            top: 2px;
+        }
+
+        .app-steps {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 25px 20px;
+            margin-bottom: 30px;
+        }
+
+        ol {
+            padding-left: 20px;
+            color: #cbd5e1;
+            font-size: 1.05rem;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            background-color: var(--accent-color);
+            color: #050605;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 14px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn:active {
+            transform: scale(0.99);
+        }
+
+        #email-display {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background: #0b0d0c;
+            border: 1px dashed var(--border-color);
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            word-break: break-all;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="clan-tag">DT</div>
+            <h1>Die Trying</h1>
+        </div>
+        
+        <!-- PITCH STATEMENT -->
+        <div class="section">
+            <p>Not the best at Wardogs but still play for the win? Looking for a chill crew to hang out with that doesn't throw tantrums, use slurs, or act like children? Consider joining <strong>DT</strong>.</p>
+        </div>
+
+        <!-- WHO WE ARE SECTION -->
+        <div class="section">
+            <h2>Who We Are:</h2>
+            <ul class="manifesto-list">
+                <li>We are a tight, teamwork-driven fireteam built for mature gamers who want to play the objective without the baggage of mega-clan noise or public lobby chaos.</li>
+                <li>We aim for 3-5 man squad but it could get bigger if more of us are online. We just don't intend this clan to grow to a big size.</li>
+                <li><strong>We Play for the Win:</strong> We aren't esports pros and we fully accept that we aren't the best on the field—but we play hard, coordinate, and care about the objective every single match.</li>
+                <li><strong>We Go Rogue:</strong> When the wider team faction is throwing or completely hopeless, we don't quit. We break off into a rogue guerrilla unit to hit back-lines, run logistics, and manufacture our own fun.</li>
+                <li><strong>Comms Discipline:</strong> We are adults looking to unwind. Our voice channels are strictly preserved for calm tactical info and relaxed banter. We have zero tolerance for tantrums, slurs, or childish antics. (We curse, we aren't prudes—we just like to keep it chill).</li>
+                <li>We care about this culture fit, and if it's not right because you're particularly frustrated and sweatier than the rest of us, we'll ask you to move on. If you don't think you're juvenile but we do, we'll ask you to move on... We want everyone who stays in the clan to be happy with everyone else in it. There are more places that fit those personalities than these in the FPS PVP world. :)</li>
+            </ul>
+        </div>
+
+        <!-- JOINING PROTOCOL -->
+        <div class="app-steps">
+            <h2>Join the Crew</h2>
+            <p style="margin-bottom: 15px; color: #94a3b8; font-size: 0.95rem;">If you are active several times a week and want to squad up, shoot us an email answering these questions. Don't overthink it, we just want to see if you read our vibe and it fits:</p>
+            <ol>
+                <li>What is your Discord username?</li>
+                <li>How many times a week do you usually play?</li>
+                <li>Why should we accept you?</li>
+            </ol>
+        </div>
+
+        <!-- Bot-Safe Reveal Trigger -->
+        <button id="reveal-btn" class="btn" onclick="revealEmail()">Reveal Application Email</button>
+        <div id="email-display"></div>
+    </div>
+
+    <script>
+        function revealEmail() {
+            // Edit your info here to trick email harvesting bots
+            var user = "YOUR_EMAIL_PREFIX"; 
+            var domain = "YOUR_DOMAIN.com"; 
+            
+            var fullEmail = user + "@" + domain;
+            var mailtoUrl = "mailto:" + fullEmail + "?subject=DT Clan Application";
+            
+            var displayDiv = document.getElementById("email-display");
+            displayDiv.innerHTML = '<a href="' + mailtoUrl + '" style="color: #3ade78; text-decoration: underline; font-weight: 700;">Click to open Mail App</a><br><span style="font-size: 0.9rem; color: #94a3b8; display: inline-block; margin-top: 5px;">Or manually copy: ' + fullEmail + '</span>';
+            displayDiv.style.display = "block";
+            
+            document.getElementById("reveal-btn").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
