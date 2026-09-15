@@ -34,7 +34,7 @@
         }
 
         .container {
-            max-width: 1000px; /* Expanded width for monitors */
+            max-width: 1000px;
             width: 100%;
             background-color: var(--panel-bg);
             border: 1px solid var(--border-color);
@@ -78,7 +78,6 @@
             font-weight: 700;
         }
 
-        /* 2-Column Grid Setup for Desktop */
         .main-content {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
@@ -163,14 +162,24 @@
             background: #0b0d0c;
             border: 1px dashed var(--border-color);
             border-radius: 4px;
-            font-family: monospace;
             font-size: 1.1rem;
-            color: var(--accent-color);
-            word-break: break-all;
             text-align: center;
         }
 
-        /* Full Width Roster Section at Bottom */
+        .mail-link {
+            color: #3ade78;
+            text-decoration: underline;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .manual-text {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            font-family: monospace;
+        }
+
         .roster-section {
             border-top: 1px solid var(--border-color);
             padding-top: 30px;
@@ -206,7 +215,6 @@
             font-weight: 600;
         }
 
-        /* Responsiveness: Collapse into single column on small screens */
         @media (max-width: 768px) {
             .main-content {
                 grid-template-columns: 1fr;
@@ -218,6 +226,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="container">
@@ -227,7 +236,7 @@
         </div>
         
         <div class="main-content">
-            <!-- LEFT COLUMN: WHO WE ARE -->
+            <!-- LEFT COLUMN: MANIFESTO -->
             <div class="left-col">
                 <div class="pitch-text">
                     <p>Not the best at Wardogs but still play for the win? Looking for a chill crew to hang out with that doesn't throw tantrums, use slurs, or act like children? Consider joining <strong>DT</strong>.</p>
@@ -244,7 +253,7 @@
                 </ul>
             </div>
 
-            <!-- RIGHT COLUMN: JOIN PROTOCOL -->
+            <!-- RIGHT COLUMN: APPS -->
             <div class="right-col">
                 <div class="app-steps">
                     <h2>Join the Crew</h2>
@@ -255,14 +264,13 @@
                         <li>Why should we accept you?</li>
                     </ol>
 
-                    <!-- Bot-Safe Reveal Trigger -->
-                    <button id="reveal-btn" class="btn" onclick="revealEmail()">Reveal Application Email</button>
+                    <button id="reveal-btn" class="btn" type="button">Reveal Application Email</button>
                     <div id="email-display"></div>
                 </div>
             </div>
         </div>
 
-        <!-- BOTTOM SECTION: FULL WIDTH ROSTER -->
+        <!-- BOTTOM COLUMN: ROSTER -->
         <div class="roster-section">
             <h2>Active Fireteam Roster</h2>
             <div class="roster-grid">
@@ -279,11 +287,30 @@
     </div>
 
     <script>
-        function revealEmail() {
-            var user = "YOUR_EMAIL_PREFIX"; 
+        function runReveal() {
+            var prefix = "YOUR_EMAIL_PREFIX"; 
             var domain = "YOUR_DOMAIN.com"; 
+            var address = prefix + String.fromCharCode(64) + domain;
             
-            var fullEmail = user + "@" + domain;
-            var mailtoUrl = "mailto:" + fullEmail + "?subject=DT Clan Application";
+            var box = document.getElementById("email-display");
             
-            var displayDiv = document.getElementById("email-display");
+            var linkNode = document.createElement("a");
+            linkNode.className = "mail-link";
+            linkNode.href = "mailto:" + address + "?subject=DT Clan Application";
+            linkNode.textContent = "Click to open Mail App";
+            
+            var textNode = document.createElement("span");
+            textNode.className = "manual-text";
+            textNode.textContent = "Or copy: " + address;
+            
+            box.appendChild(linkNode);
+            box.appendChild(textNode);
+            box.style.display = "block";
+            
+            document.getElementById("reveal-btn").style.display = "none";
+        }
+        document.getElementById("reveal-btn").onclick = runReveal;
+    </script>
+
+</body>
+</html>
